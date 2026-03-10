@@ -210,22 +210,6 @@ As a practical rule, an agent environment is a good fit for this skill if it can
 - `按口播稿剪辑`
 - `帮我粗剪这个口播视频`
 
-### English Trigger Phrases
-
-Common prompts that should activate this skill:
-
-- `AI video editing`
-- `auto edit this video`
-- `video edit`
-- `rough cut`
-- `rough cut this talking-head video`
-- `remove repeated takes`
-- `trim pauses`
-- `turn this video into subtitles`
-- `compare the video against the script`
-- `edit this video using the script`
-- `clean up this monologue video`
-
 ### 为什么这样做
 
 - 更省 token：不依赖视觉识别，不做高成本多模态逐帧分析
