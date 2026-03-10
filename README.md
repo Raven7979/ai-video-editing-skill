@@ -9,7 +9,7 @@
 </p>
 
 <p align="center">
-  <a href="#中文说明">中文说明</a> · <a href="#english">English</a>
+  <a href="#english">English</a> · <a href="#中文说明">中文说明</a>
 </p>
 
 <p align="center">
@@ -18,89 +18,6 @@
   <img alt="best for" src="https://img.shields.io/badge/best%20for-talking--head%20editing-1d4ed8">
   <img alt="model" src="https://img.shields.io/badge/recommended-GPT5.4-111827">
 </p>
-
-## English Trigger Phrases
-
-Common prompts that should activate this skill:
-
-- `AI video editing`
-- `auto edit this video`
-- `rough cut this talking-head video`
-- `remove repeated takes`
-- `trim pauses`
-- `turn this video into subtitles`
-- `compare the video against the script`
-- `edit this video using the script`
-- `clean up this monologue video`
-
-### 为什么这样做
-
-- 更省 token：不依赖视觉识别，不做高成本多模态逐帧分析
-- 更适合口播：口播问题大多出在“说法重复、节奏拖沓、重讲、气口”而不是画面内容
-- 更容易批量化：同类口播视频可以快速统一处理
-- 有稿效果更好：如果提供口播稿，系统能更稳地判断该保留哪一句、哪里可能误剪
-
-### 适用场景
-
-- 口播视频初剪
-- 自媒体讲解视频
-- 知识分享短视频
-- 解说类出镜素材
-- 需要快速做粗剪和字幕复核的内容团队
-
-### 不适合直接硬剪的场景
-
-- 多人物访谈
-- 强依赖画面信息的 vlog / 纪录片 / 剧情内容
-- 需要镜头语言、表情和动作判断的复杂剪辑
-
-### 适用软件 / 兼容环境
-
-这个技能本质上是一个 `SKILL.md + 本地脚本` 的工作流，因此最适合能直接调用本地 shell / Python / ffmpeg 的智能体环境。
-
-当前可写进说明的适用范围：
-
-- Codex / Codex Desktop
-- OpenCode
-- Claude Code
-- Antigravity
-- Claude Code 风格的本地智能体环境
-- 支持 Skills / SKILL.md 机制的本地 AI Agent 工作流
-
-关于 `OpenClaw`：
-
-- 如果 `OpenClaw` 支持读取 `SKILL.md`
-- 并且可以调用本地 `bash / python / ffmpeg`
-- 也支持把用户文件路径传给技能脚本
-
-那么这套技能理论上可以接入 `OpenClaw`。
-
-更准确地说：
-
-- `Codex / Codex Desktop`：可直接使用或少量调整后使用
-- `Claude Code`：可直接使用或少量调整后使用
-- `OpenCode`：如果支持本地脚本调用和文件路径传递，通常可以适配
-- `Antigravity`：如果支持技能说明文件和本地命令执行，通常可以适配
-- `OpenClaw`：大概率可以适配，但是否“开箱即用”取决于它对技能包格式和本地脚本执行的支持程度
-
-判断一个智能体环境是否适合接入这套技能，可以看它是否满足这几个条件：
-
-- 能读取技能说明文件，例如 `SKILL.md`
-- 能执行本地 `bash`
-- 能执行本地 `python`
-- 本机可用 `ffmpeg / ffprobe`
-- 能把用户提供的视频路径和口播稿路径传给脚本
-
-### 输出内容
-
-- 原始转写：`.raw.txt`
-- 校对稿：`.txt`
-- 原始字幕：`.raw.srt`
-- 初剪视频：`.roughcut.mp4`
-- 初剪后重新转写：`.roughcut.raw.txt`
-- 初剪后校对稿：`.roughcut.txt`
-- 初剪后字幕：`.roughcut.srt`
-- 剪辑报告：`.roughcut.json`
 
 ## English
 
@@ -147,6 +64,22 @@ Typical workflow:
 5. review the exported video, subtitles, and report
 6. if the system finds long likely NG / rehearsal / improvised sections, confirm whether they should also be removed
 
+### English Trigger Phrases
+
+Common English prompts:
+
+- `AI video editing`
+- `auto edit this video`
+- `video edit`
+- `rough cut`
+- `rough cut this talking-head video`
+- `remove repeated takes`
+- `trim pauses`
+- `turn this video into subtitles`
+- `compare the video against the script`
+- `edit this video using the script`
+- `clean up this monologue video`
+
 ### Chinese Trigger Phrases
 
 Common Chinese prompts:
@@ -161,20 +94,6 @@ Common Chinese prompts:
 - `对稿`
 - `按口播稿剪辑`
 - `帮我粗剪这个口播视频`
-
-### English Trigger Phrases
-
-Common English prompts:
-
-- `AI video editing`
-- `auto edit this video`
-- `rough cut this talking-head video`
-- `remove repeated takes`
-- `trim pauses`
-- `turn this video into subtitles`
-- `compare the video against the script`
-- `edit this video using the script`
-- `clean up this monologue video`
 
 ### Why this approach
 
@@ -207,8 +126,7 @@ Reasonable compatibility notes:
 - OpenCode
 - Claude Code
 - Antigravity
-- Claude Code style local agent environments
-- Local AI agent systems that support Skills or `SKILL.md`-based workflows
+- local agent environments that support Skills or `SKILL.md`-based workflows
 
 About `OpenClaw`:
 
@@ -246,7 +164,6 @@ As a practical rule, an agent environment is a good fit for this skill if it can
 - cleaned rough-cut transcript: `.roughcut.txt`
 - rough-cut subtitles: `.roughcut.srt`
 - edit report: `.roughcut.json`
-
 
 ## 中文说明
 
@@ -308,5 +225,86 @@ As a practical rule, an agent environment is a good fit for this skill if it can
 - `按口播稿剪辑`
 - `帮我粗剪这个口播视频`
 
-#
+### English Trigger Phrases
 
+Common prompts that should activate this skill:
+
+- `AI video editing`
+- `auto edit this video`
+- `video edit`
+- `rough cut`
+- `rough cut this talking-head video`
+- `remove repeated takes`
+- `trim pauses`
+- `turn this video into subtitles`
+- `compare the video against the script`
+- `edit this video using the script`
+- `clean up this monologue video`
+
+### 为什么这样做
+
+- 更省 token：不依赖视觉识别，不做高成本多模态逐帧分析
+- 更适合口播：口播问题大多出在“说法重复、节奏拖沓、重讲、气口”而不是画面内容
+- 更容易批量化：同类口播视频可以快速统一处理
+- 有稿效果更好：如果提供口播稿，系统能更稳地判断该保留哪一句、哪里可能误剪
+
+### 适用场景
+
+- 口播视频初剪
+- 自媒体讲解视频
+- 知识分享短视频
+- 解说类出镜素材
+- 需要快速做粗剪和字幕复核的内容团队
+
+### 不适合直接硬剪的场景
+
+- 多人物访谈
+- 强依赖画面信息的 vlog / 纪录片 / 剧情内容
+- 需要镜头语言、表情和动作判断的复杂剪辑
+
+### 适用软件 / 兼容环境
+
+这个技能本质上是一个 `SKILL.md + 本地脚本` 的工作流，因此最适合能直接调用本地 shell / Python / ffmpeg 的智能体环境。
+
+当前可写进说明的适用范围：
+
+- Codex / Codex Desktop
+- OpenCode
+- Claude Code
+- Antigravity
+- 支持 Skills / SKILL.md 机制的本地 AI Agent 工作流
+
+关于 `OpenClaw`：
+
+- 如果 `OpenClaw` 支持读取 `SKILL.md`
+- 并且可以调用本地 `bash / python / ffmpeg`
+- 也支持把用户文件路径传给技能脚本
+
+那么这套技能理论上可以接入 `OpenClaw`。
+
+更准确地说：
+
+- `Codex / Codex Desktop`：可直接使用或少量调整后使用
+- `Claude Code`：可直接使用或少量调整后使用
+- `OpenCode`：如果支持本地脚本调用和文件路径传递，通常可以适配
+- `Antigravity`：如果支持技能说明文件和本地命令执行，通常可以适配
+- `OpenClaw`：大概率可以适配，但是否“开箱即用”取决于它对技能包格式和本地脚本执行的支持程度
+
+判断一个智能体环境是否适合接入这套技能，可以看它是否满足这几个条件：
+
+- 能读取技能说明文件，例如 `SKILL.md`
+- 能执行本地 `bash`
+- 能执行本地 `python`
+- 本机可用 `ffmpeg / ffprobe`
+- 能把用户提供的视频路径和口播稿路径传给脚本
+
+### 输出内容
+
+- 原始转写：`.raw.txt`
+- 校对稿：`.txt`
+- 原始字幕：`.raw.srt`
+- 初剪视频：`.roughcut.mp4`
+- 初剪后重新转写：`.roughcut.raw.txt`
+- 初剪后校对稿：`.roughcut.txt`
+- 初剪后字幕：`.roughcut.srt`
+- 剪辑报告：`.roughcut.json`
