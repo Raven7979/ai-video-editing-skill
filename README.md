@@ -27,6 +27,53 @@
 5. 如果用户提供了口播稿，再把剪后字幕和口播稿重新比对
 6. 标出疑似大段 NG / 试讲 / 临场发挥，交给用户确认是否继续删
 
+### 怎么使用
+
+最常见的使用方式是，先把视频路径发给智能体，再补两个信息：
+
+1. 有没有口播稿
+2. 气口剪辑强度选 `一般` 还是 `多点`
+
+典型使用流程：
+
+1. 提供视频文件路径
+2. 如有口播稿，再提供 `txt / md / docx` 或直接粘贴文本
+3. 选择剪辑强度：
+   - `一般`
+   - `多点`
+4. 智能体执行初剪
+5. 输出初剪视频、字幕、报告
+6. 如果检测到大段疑似 NG / 试讲 / 临场发挥，再由用户确认是否继续删
+
+### 中文唤醒词
+
+可直接触发这类技能的常见说法：
+
+- `AI剪辑`
+- `自动剪辑`
+- `初剪`
+- `口播初剪`
+- `去气口`
+- `剪掉重复`
+- `视频转字幕`
+- `对稿`
+- `按口播稿剪辑`
+- `帮我粗剪这个口播视频`
+
+### English Trigger Phrases
+
+Common prompts that should activate this skill:
+
+- `AI video editing`
+- `auto edit this video`
+- `rough cut this talking-head video`
+- `remove repeated takes`
+- `trim pauses`
+- `turn this video into subtitles`
+- `compare the video against the script`
+- `edit this video using the script`
+- `clean up this monologue video`
+
 ### 为什么这样做
 
 - 更省 token：不依赖视觉识别，不做高成本多模态逐帧分析
@@ -120,6 +167,53 @@ Instead, it uses a lightweight workflow:
 4. re-transcribe the edited video
 5. compare the edited transcript against the provided script if one exists
 6. flag long likely NG / rehearsal / improvised sections for user confirmation
+
+### How To Use
+
+The most common workflow is to give the agent the video path first, then provide two more pieces of information:
+
+1. whether a prepared script is available
+2. whether the pause-cutting intensity should be `normal` or `more`
+
+Typical workflow:
+
+1. provide the video file path
+2. if available, provide the script as `txt / md / docx` or paste the text directly
+3. choose the editing intensity:
+   - `normal`
+   - `more`
+4. let the agent generate the rough cut
+5. review the exported video, subtitles, and report
+6. if the system finds long likely NG / rehearsal / improvised sections, confirm whether they should also be removed
+
+### Chinese Trigger Phrases
+
+Common Chinese prompts:
+
+- `AI剪辑`
+- `自动剪辑`
+- `初剪`
+- `口播初剪`
+- `去气口`
+- `剪掉重复`
+- `视频转字幕`
+- `对稿`
+- `按口播稿剪辑`
+- `帮我粗剪这个口播视频`
+
+### English Trigger Phrases
+
+Common English prompts:
+
+- `AI video editing`
+- `auto edit this video`
+- `rough cut this talking-head video`
+- `remove repeated takes`
+- `trim pauses`
+- `turn this video into subtitles`
+- `compare the video against the script`
+- `edit this video using the script`
+- `clean up this monologue video`
 
 ### Why this approach
 
