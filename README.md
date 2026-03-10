@@ -308,3 +308,11 @@ Common prompts that should activate this skill:
 - 初剪后校对稿：`.roughcut.txt`
 - 初剪后字幕：`.roughcut.srt`
 - 剪辑报告：`.roughcut.json`
+
+---
+
+## 支持作者
+
+如果这个技能对你有帮助，欢迎随手支持一下：
+
+![支持作者](./assets/support-author-banner.jpg)
