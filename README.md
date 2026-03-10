@@ -55,6 +55,9 @@
 当前可写进说明的适用范围：
 
 - Codex / Codex Desktop
+- OpenCode
+- Claude Code
+- Antigravity
 - Claude Code 风格的本地智能体环境
 - 支持 Skills / SKILL.md 机制的本地 AI Agent 工作流
 
@@ -68,8 +71,19 @@
 
 更准确地说：
 
-- `Codex / Claude Code`：可直接使用或少量调整后使用
+- `Codex / Codex Desktop`：可直接使用或少量调整后使用
+- `Claude Code`：可直接使用或少量调整后使用
+- `OpenCode`：如果支持本地脚本调用和文件路径传递，通常可以适配
+- `Antigravity`：如果支持技能说明文件和本地命令执行，通常可以适配
 - `OpenClaw`：大概率可以适配，但是否“开箱即用”取决于它对技能包格式和本地脚本执行的支持程度
+
+判断一个智能体环境是否适合接入这套技能，可以看它是否满足这几个条件：
+
+- 能读取技能说明文件，例如 `SKILL.md`
+- 能执行本地 `bash`
+- 能执行本地 `python`
+- 本机可用 `ffmpeg / ffprobe`
+- 能把用户提供的视频路径和口播稿路径传给脚本
 
 ### 输出内容
 
@@ -135,6 +149,9 @@ This skill is essentially a `SKILL.md + local scripts` workflow, so it fits best
 Reasonable compatibility notes:
 
 - Codex / Codex Desktop
+- OpenCode
+- Claude Code
+- Antigravity
 - Claude Code style local agent environments
 - Local AI agent systems that support Skills or `SKILL.md`-based workflows
 
@@ -150,8 +167,19 @@ then this skill should be adaptable to `OpenClaw`.
 
 More precisely:
 
-- `Codex / Claude Code`: direct fit or very small adjustments
+- `Codex / Codex Desktop`: direct fit or very small adjustments
+- `Claude Code`: direct fit or very small adjustments
+- `OpenCode`: usually adaptable if local script execution and file path passing are supported
+- `Antigravity`: usually adaptable if it supports skill-style instructions plus local command execution
 - `OpenClaw`: likely compatible, but whether it works out of the box depends on its support for skill packaging and local script execution
+
+As a practical rule, an agent environment is a good fit for this skill if it can do all of the following:
+
+- read a skill instruction file such as `SKILL.md`
+- run local `bash`
+- run local `python`
+- access local `ffmpeg / ffprobe`
+- pass user-provided video and script paths into the workflow
 
 ### Outputs
 
