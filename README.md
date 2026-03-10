@@ -48,6 +48,29 @@
 - 强依赖画面信息的 vlog / 纪录片 / 剧情内容
 - 需要镜头语言、表情和动作判断的复杂剪辑
 
+### 适用软件 / 兼容环境
+
+这个技能本质上是一个 `SKILL.md + 本地脚本` 的工作流，因此最适合能直接调用本地 shell / Python / ffmpeg 的智能体环境。
+
+当前可写进说明的适用范围：
+
+- Codex / Codex Desktop
+- Claude Code 风格的本地智能体环境
+- 支持 Skills / SKILL.md 机制的本地 AI Agent 工作流
+
+关于 `OpenClaw`：
+
+- 如果 `OpenClaw` 支持读取 `SKILL.md`
+- 并且可以调用本地 `bash / python / ffmpeg`
+- 也支持把用户文件路径传给技能脚本
+
+那么这套技能理论上可以接入 `OpenClaw`。
+
+更准确地说：
+
+- `Codex / Claude Code`：可直接使用或少量调整后使用
+- `OpenClaw`：大概率可以适配，但是否“开箱即用”取决于它对技能包格式和本地脚本执行的支持程度
+
 ### 输出内容
 
 - 原始转写：`.raw.txt`
@@ -104,6 +127,31 @@ Instead, it uses a lightweight workflow:
 - multi-person interviews
 - vlogs or documentaries that depend heavily on visuals
 - cinematic edits requiring facial, gesture, and shot-language judgment
+
+### Compatible Tools / Runtime Environments
+
+This skill is essentially a `SKILL.md + local scripts` workflow, so it fits best in agent environments that can execute local shell, Python, and ffmpeg commands.
+
+Reasonable compatibility notes:
+
+- Codex / Codex Desktop
+- Claude Code style local agent environments
+- Local AI agent systems that support Skills or `SKILL.md`-based workflows
+
+About `OpenClaw`:
+
+If `OpenClaw` can:
+
+- read `SKILL.md`
+- execute local `bash / python / ffmpeg`
+- pass user-provided file paths into the workflow
+
+then this skill should be adaptable to `OpenClaw`.
+
+More precisely:
+
+- `Codex / Claude Code`: direct fit or very small adjustments
+- `OpenClaw`: likely compatible, but whether it works out of the box depends on its support for skill packaging and local script execution
 
 ### Outputs
 
