@@ -80,21 +80,6 @@ Common English prompts:
 - `edit this video using the script`
 - `clean up this monologue video`
 
-### Chinese Trigger Phrases
-
-Common Chinese prompts:
-
-- `AI剪辑`
-- `自动剪辑`
-- `初剪`
-- `口播初剪`
-- `去气口`
-- `剪掉重复`
-- `视频转字幕`
-- `对稿`
-- `按口播稿剪辑`
-- `帮我粗剪这个口播视频`
-
 ### Why this approach
 
 - Token-efficient: avoids costly vision-first multimodal processing
