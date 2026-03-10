@@ -1,10 +1,29 @@
-# AI Video Editing Skill
+<p align="center">
+  <img src="./assets/logo.svg" alt="AI Video Editing Skill Logo" width="140" />
+</p>
 
-[中文说明](#中文说明) | [English](#english)
+<h1 align="center">AI Video Editing Skill</h1>
+
+<p align="center">
+  Token-efficient rough cuts for talking-head videos
+</p>
+
+<p align="center">
+  <a href="#中文说明">中文说明</a> · <a href="#english">English</a>
+</p>
+
+<p align="center">
+  <img alt="workflow" src="https://img.shields.io/badge/workflow-speech--to--text%20first-0f766e">
+  <img alt="focus" src="https://img.shields.io/badge/focus-token%20efficient-c2410c">
+  <img alt="best for" src="https://img.shields.io/badge/best%20for-talking--head%20editing-1d4ed8">
+  <img alt="model" src="https://img.shields.io/badge/recommended-GPT5.4-111827">
+</p>
 
 ## 中文说明
 
 `AI Video Editing Skill` 是一个面向口播视频的自动初剪技能，重点场景是单人口播、讲解、解说、知识分享类视频。
+
+> 推荐模型：`GPT5.4`
 
 它的核心目标不是做复杂视频理解，而是在尽量少消耗 token 的前提下，把真正影响口播节奏的问题先解决掉：
 
@@ -146,6 +165,8 @@ Common prompts that should activate this skill:
 ## English
 
 `AI Video Editing Skill` is an automatic rough-cut workflow built for talking-head videos such as commentary, explainers, educational clips, and creator monologues.
+
+> Recommended model: `GPT5.4`
 
 Its goal is not full visual understanding. The goal is to solve the highest-value editing problems for spoken videos while keeping token usage low:
 

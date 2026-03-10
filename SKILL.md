@@ -1,11 +1,20 @@
 ---
 name: ai-video-editing
-description: "用于 AI 口播初剪、自动剪辑、去气口、去重复、视频转字幕、按口播稿对稿。支持语义级重复判断、剪后重新转字幕并与口播稿复核，还会标出大段 NG / 试讲 / 临场发挥候选段供用户确认。支持中文和英文，默认按电脑语言自动切换，也可手动指定。触发词包括 AI剪辑、自动剪辑、初剪、去气口、视频转字幕、对稿、AI video editing、video edit、rough cut。开始前先确认用户是否提供口播稿，以及剪辑强度选 一般 或 多点。"
+description: "用于 AI 口播初剪、自动剪辑、去气口、去重复、视频转字幕、按口播稿对稿。支持语义级重复判断、剪后重新转字幕并与口播稿复核，还会标出大段 NG / 试讲 / 临场发挥候选段供用户确认。支持中文和英文，默认按电脑语言自动切换，也可手动指定。中文触发词包括 AI剪辑、自动剪辑、初剪、口播初剪、去气口、视频转字幕、对稿；英文触发词包括 AI video editing、auto edit this video、video edit、rough cut、trim pauses、remove repeated takes。开始前先确认用户是否提供口播稿，以及剪辑强度选 一般 或 多点。"
 ---
 
 # AI Video Editing
 
 用于口播视频的自动初剪、字幕提取、剪后复核。
+
+## 推荐模型 / Recommended Model
+
+- 推荐优先使用 `GPT5.4`
+- 原因：
+  - 更适合处理长上下文里的口播稿比对
+  - 对重复表达、重说、NG 候选的语义判断更稳
+  - 更适合在“少看画面、多看文本和字幕”的工作流里节省 token
+- 如果运行环境不支持 `GPT5.4`，再退回当前环境的强推理模型
 
 ## 语言切换 / Language Mode
 
@@ -35,6 +44,34 @@ description: "用于 AI 口播初剪、自动剪辑、去气口、去重复、�
 默认映射：
 - `一般` -> `normal`
 - `多点` -> `more`
+
+## 中英文唤醒词 / Trigger Phrases
+
+中文常见说法：
+
+- `AI剪辑`
+- `自动剪辑`
+- `初剪`
+- `口播初剪`
+- `去气口`
+- `剪掉重复`
+- `视频转字幕`
+- `对稿`
+- `按口播稿剪辑`
+- `帮我粗剪这个口播视频`
+
+English common prompts:
+
+- `AI video editing`
+- `auto edit this video`
+- `video edit`
+- `rough cut`
+- `rough cut this talking-head video`
+- `remove repeated takes`
+- `trim pauses`
+- `turn this video into subtitles`
+- `compare the video against the script`
+- `edit this video using the script`
 
 ## 工作流
 
