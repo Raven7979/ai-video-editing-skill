@@ -104,6 +104,21 @@ English common prompts:
    - 先把候选时间段和原因告诉用户
    - 问用户这些大段是否要一起剪掉
 
+## 首次运行依赖 / First-run Dependencies
+
+- 会自动创建本地 `.venv`
+- 会自动安装 `faster-whisper`
+- 不会自动安装系统级 `ffmpeg / ffprobe`
+- 如果检测到缺少 `ffmpeg / ffprobe`，脚本会直接提示用户安装
+- 当前内置提示覆盖：
+  - `macOS`：提示使用 `brew install ffmpeg`
+  - `Windows`：提示使用 `winget install Gyan.FFmpeg` 或 `choco install ffmpeg`
+
+也就是说，这个技能现在的首次使用体验是：
+
+- Python 依赖会尽量自动处理
+- 系统级视频工具会检查并提示，不会静默失败
+
 ## 剪辑规则
 
 - 默认用于口播、讲解、解说、短视频出镜素材。

@@ -139,6 +139,16 @@ As a practical rule, an agent environment is a good fit for this skill if it can
 - access local `ffmpeg / ffprobe`
 - pass user-provided video and script paths into the workflow
 
+### First-run Dependencies
+
+- Automatically creates a local `.venv`
+- Automatically installs `faster-whisper`
+- Does not auto-install system-level `ffmpeg / ffprobe`
+- If `ffmpeg` or `ffprobe` is missing, the script now prints install guidance instead of failing silently
+- Built-in install hints:
+  - macOS: `brew install ffmpeg`
+  - Windows: `winget install Gyan.FFmpeg` or `choco install ffmpeg`
+
 ### Outputs
 
 - raw transcript: `.raw.txt`
@@ -266,6 +276,16 @@ As a practical rule, an agent environment is a good fit for this skill if it can
 - 能执行本地 `python`
 - 本机可用 `ffmpeg / ffprobe`
 - 能把用户提供的视频路径和口播稿路径传给脚本
+
+### 首次运行依赖
+
+- 会自动创建本地 `.venv`
+- 会自动安装 `faster-whisper`
+- 不会自动安装系统级 `ffmpeg / ffprobe`
+- 如果缺少 `ffmpeg` 或 `ffprobe`，脚本会直接给出安装提示，不会无提示失败
+- 当前内置安装提示：
+  - macOS：`brew install ffmpeg`
+  - Windows：`winget install Gyan.FFmpeg` 或 `choco install ffmpeg`
 
 ### 输出内容
 
