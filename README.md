@@ -46,6 +46,23 @@ Instead, it uses a lightweight workflow:
 5. compare the edited transcript against the provided script if one exists
 6. flag long likely NG / rehearsal / improvised sections for user confirmation
 
+### Installation
+
+1. Clone or download this repository.
+2. Make sure `python3` is installed.
+3. Install `ffmpeg` and `ffprobe`:
+   - macOS: `brew install ffmpeg`
+   - Windows: `winget install Gyan.FFmpeg`
+   - or Windows with Chocolatey: `choco install ffmpeg`
+4. Place the skill folder in your local skills directory, or load it from this repository in your agent environment.
+5. On first run, the script will automatically create a local `.venv` and install `faster-whisper`.
+
+Minimal command example:
+
+```bash
+bash scripts/run_ai_video_edit.sh "/path/to/video.mp4" --intensity normal
+```
+
 ### How To Use
 
 The most common workflow is to give the agent the video path first, then provide two more pieces of information:
@@ -186,6 +203,23 @@ As a practical rule, an agent environment is a good fit for this skill if it can
 4. 初剪后重新转字幕
 5. 如果用户提供了口播稿，再把剪后字幕和口播稿重新比对
 6. 标出疑似大段 NG / 试讲 / 临场发挥，交给用户确认是否继续删
+
+### 安装方式
+
+1. 克隆或下载这个仓库。
+2. 确保机器上已经安装 `python3`。
+3. 安装 `ffmpeg` 和 `ffprobe`：
+   - macOS：`brew install ffmpeg`
+   - Windows：`winget install Gyan.FFmpeg`
+   - 或 Windows + Chocolatey：`choco install ffmpeg`
+4. 把这个 skill 目录放到你的本地 skills 目录里，或者在你的 agent 环境中直接从这个仓库加载。
+5. 首次运行时，脚本会自动创建本地 `.venv` 并安装 `faster-whisper`。
+
+最小运行示例：
+
+```bash
+bash scripts/run_ai_video_edit.sh "/path/to/video.mp4" --intensity normal
+```
 
 ### 怎么使用
 
