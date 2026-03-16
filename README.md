@@ -46,6 +46,18 @@ Instead, it uses a lightweight workflow:
 5. compare the edited transcript against the provided script if one exists
 6. flag long likely NG / rehearsal / improvised sections for user confirmation
 
+### Quick Start
+
+```bash
+bash scripts/run_ai_video_edit.sh "/path/to/video.mp4" --intensity normal
+```
+
+With a script:
+
+```bash
+bash scripts/run_ai_video_edit.sh "/path/to/video.mp4" --script "/path/to/script.docx" --intensity normal
+```
+
 ### Installation
 
 1. Clone or download this repository.
@@ -203,6 +215,18 @@ As a practical rule, an agent environment is a good fit for this skill if it can
 4. 初剪后重新转字幕
 5. 如果用户提供了口播稿，再把剪后字幕和口播稿重新比对
 6. 标出疑似大段 NG / 试讲 / 临场发挥，交给用户确认是否继续删
+
+### 快速开始
+
+```bash
+bash scripts/run_ai_video_edit.sh "/path/to/video.mp4" --intensity normal
+```
+
+如果有口播稿：
+
+```bash
+bash scripts/run_ai_video_edit.sh "/path/to/video.mp4" --script "/path/to/script.docx" --intensity normal
+```
 
 ### 安装方式
 
